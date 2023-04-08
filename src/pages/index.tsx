@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+import Button from '@components/Button'
+import newJeans from '@images/newJeans.png'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -55,9 +57,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
+          <p className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}>
             Find in-depth information about Next.js features and API.
           </p>
         </a>
@@ -74,9 +74,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
+          <p className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}>
             Learn about Next.js in an interactive course with&nbsp;quizzes!
           </p>
         </a>
@@ -93,9 +91,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
+          <p className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}>
             Discover and deploy boilerplate example Next.js&nbsp;projects.
           </p>
         </a>
@@ -112,12 +108,18 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p
-            className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}
-          >
+          <p className={`${inter.className} m-0 max-w-[30ch] text-sm opacity-50`}>
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
+        <Button>버튼</Button>
+        <Image src="/images/newJeans.png" alt="뉴진스 이미지" width={120} height={120} />
+        <Image
+          src="https://img.gigglehd.com/gg/files/attach/images/158/803/973/013/8074ee59165411ba11b827949f3cd9bc.png"
+          alt="개발 진스"
+          width={120}
+          height={120}
+        />
       </div>
     </main>
   )
