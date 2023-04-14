@@ -27,6 +27,8 @@ module.exports = {
         cs: {
           mainblack: '#2F3E39',
           skyblue: '#98D0EF',
+          mainred: '#FE6A6A',
+          300: '#DFDFDF',
         },
       },
       fontFamily: {
