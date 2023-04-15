@@ -6,20 +6,29 @@ import Icon from '@components/Icon/Icon'
 import Input from '@components/common/Input'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import service from 'src/util/service'
+import { validCheck } from 'src/util'
 
 export default function Home() {
   const [value, setValue] = useState('')
-  const rotuer = useRouter()
+  const router = useRouter()
 
-  // 유효성 체크 검사
-  const validCheck = (value: string) => {
-    if (value.trim().length === 0) return 'invalid'
-  }
-
-  const handleClickLogin = () => {
+  const handleClickLogin = async () => {
     // TODO : API key 검증
     // 메인 페이지로 replace
-    rotuer.replace('/home')
+    if (!validCheck(value)) {
+      alert('api key를 입력해 주세요!')
+      return
+    }
+    try {
+      const response = await service.fetchLogin(value, () => router.replace('/home'))
+      // 스낵바로 표출
+      console.log(response)
+    } catch (error) {
+      // 스낵바로 에러 표츌
+      console.log(error)
+      alert(error)
+    }
   }
 
   return (
@@ -52,7 +61,7 @@ export default function Home() {
           }}
         />
       </div>
-      <div className="absolute w-full px-4 bottom-10">
+      <div className="absolute max-w-lg w-full px-4 bottom-10">
         <div className="mb-3">
           <Button
             txtColor="text-cs-mainblack"
