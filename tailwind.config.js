@@ -29,6 +29,8 @@ module.exports = {
           skyblue: '#98D0EF',
           mainred: '#FE6A6A',
           300: '#DFDFDF',
+          600: '#ABABAB',
+          700: '#797979',
         },
       },
       fontFamily: {
