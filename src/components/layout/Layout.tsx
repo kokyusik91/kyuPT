@@ -6,7 +6,7 @@ type LayoutProps = {
 
 function Layout({ children }: LayoutProps) {
   return (
-    <div className="max-w-lg w-full h-full bg-white fixed left-1/2 -translate-x-1/2">
+    <div className="fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 max-w-lg w-full h-full bg-white mx-auto">
       {children}
     </div>
   )
