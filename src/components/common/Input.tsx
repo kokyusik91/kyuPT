@@ -3,13 +3,14 @@ import React, { ChangeEvent, Dispatch, ReactNode, SetStateAction, useEffect, use
 type InputProps = {
   id: string
   value: string
-  setValue: Dispatch<SetStateAction<string>>
+  handleChangeInput: (e: ChangeEvent<HTMLInputElement>) => void
+  name: string
   inputProps: {
     placeholder: string
   }
 }
 
-function Input({ id, value, setValue, inputProps }: InputProps) {
+function Input({ id, value, handleChangeInput, name, inputProps }: InputProps) {
   const inputRef = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
@@ -18,10 +19,6 @@ function Input({ id, value, setValue, inputProps }: InputProps) {
     }
   }, [])
 
-  const handleChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value)
-  }
-
   return (
     <div>
       <label htmlFor={id} className="block mb-1 text-cs-mainblack">
@@ -29,8 +26,9 @@ function Input({ id, value, setValue, inputProps }: InputProps) {
       </label>
       <input
         value={value}
-        onChange={handleChangeValue}
-        className="w-full rounded-lg p-4 border text-cs-mainblack placeholder-cs-300 border-cs-skyblue text-ts-mainblack"
+        name={name}
+        onChange={handleChangeInput}
+        className="w-full rounded-lg px-4 py-3 border text-cs-mainblack placeholder-cs-300 border-cs-skyblue text-ts-mainblack"
         {...inputProps}
         ref={inputRef}
       />
