@@ -28,6 +28,7 @@ module.exports = {
           mainblack: '#2F3E39',
           skyblue: '#98D0EF',
           mainred: '#FE6A6A',
+          mainyellow: '#FCB707',
           300: '#DFDFDF',
           600: '#ABABAB',
           700: '#797979',
