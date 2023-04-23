@@ -24,7 +24,7 @@ class DatabaseService {
     return await this.db.getChatRooms()
   }
 
-  async deleteChatroom(id: number): Promise<undefined> {
+  async deleteChatroom(id: number): Promise<void> {
     await this.db.deleteChatRoom(id)
   }
 

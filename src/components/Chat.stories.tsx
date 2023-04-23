@@ -11,8 +11,8 @@ type Story = StoryObj<typeof Chat>
 export default meta
 
 const roomInfo = {
-  id: '1',
-  headCount: '4',
+  id: 1,
+  headCount: 4,
   title: '어서 들어와요!',
   createdAt: new Date(),
 }
