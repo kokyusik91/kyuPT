@@ -6,7 +6,7 @@ type ScaffoldPageProps = {
   bgColor?: string
 }
 
-function ScaffoldPage({ children, appHeader, bgColor = 'bg-slate-400' }: ScaffoldPageProps) {
+function ScaffoldPage({ children, appHeader, bgColor = 'bg-slate-500' }: ScaffoldPageProps) {
   return (
     <main className={`w-full h-screen relative ${bgColor}`}>
       {appHeader && <header className="h-12">{appHeader}</header>}
