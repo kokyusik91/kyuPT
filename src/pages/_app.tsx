@@ -10,11 +10,11 @@ const dbService = DatabaseService.getDBInstance('chatGPT', 1)
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout>
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* <Script id="google-analytics" strategy="afterInteractive">
         {`
           console.log("afterInteractive 그다음 실행")
         `}
-      </Script>
+      </Script> */}
       <Component {...pageProps} dbService={dbService} />
     </Layout>
   )
