@@ -68,10 +68,10 @@ function Chatroom({ dbService }: ChatRoomProps) {
           }
           return setTimeout(async () => {
             const copiedMessage = [...messages]
-            const lastMessage = copiedMessage.pop()
-            const modifyedMessage = { ...lastMessage, role: 'user' } as Message
+            // const lastMessage = copiedMessage.pop()
+            // const modifyedMessage = { ...lastMessage, role: 'user' } as Message
             try {
-              const response = await service.chatWithGpt([...copiedMessage, { ...modifyedMessage }])
+              const response = await service.chatWithGpt([...copiedMessage])
               const result = response.result.message
 
               setMessage((prev) => {
