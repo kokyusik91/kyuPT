@@ -1,8 +1,5 @@
 import React, { ReactNode } from 'react'
-import Dimmed from './Dimmed'
-import ButtonGroup from './ButtonGroup'
-import Button from './Button'
-import Input from './Input'
+
 import Portal from './Portal'
 import {
   DIMMED_ZINDEX,

@@ -9,6 +9,13 @@ const meta: Meta<typeof Input> = {
 
 type Story = StoryObj<typeof Input>
 
-export const Basic: Story = {}
+export const Basic: Story = {
+  args: {
+    id: 'Label',
+    inputProps: {
+      placeholder: '기본값을 입력해주헤요',
+    },
+  },
+}
 
 export default meta

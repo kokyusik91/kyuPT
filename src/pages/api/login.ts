@@ -38,7 +38,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
   try {
     const response = await handleConfirmAPIKEY(apikey)
-    console.log(response)
     return res.status(200).json({ message: '로그인에 성공하였습니다!' })
   } catch (error: unknown) {
     const cutomErr = error as CustomError
