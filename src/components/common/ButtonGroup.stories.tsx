@@ -11,6 +11,7 @@ const meta: Meta<typeof ButtonGroup> = {
 type Story = StoryObj<typeof ButtonGroup>
 export default meta
 
+// 스토리북과 실제 프로젝트의 ui에 반영이 다르게 된다;;
 export const Basic: Story = {
   args: {
     children: (

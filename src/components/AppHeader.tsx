@@ -10,7 +10,7 @@ function AppHeader({ leftSideComponent, rightSideComponent, title }: AppHeaderPr
   return (
     <div className="w-full h-12 flex justify-center items-center relative">
       <button className="absolute top-2/4	left-4 -translate-y-1/2">{leftSideComponent}</button>
-      <h1 className="text-paragraph text-cs-600">{title}</h1>
+      <h1 className="text-paragraph text-white">{title}</h1>
       <button className="absolute top-2/4	right-4 -translate-y-1/2">{rightSideComponent}</button>
     </div>
   )
