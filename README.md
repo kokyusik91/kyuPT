@@ -64,6 +64,16 @@ https://kokyusik91.github.io/tech/eleventh/
   <br>
   <br>
 
+## 주요 기능 🧑🏼‍🏫
+
+- api-key를 통한 인증
+- 채팅방 목록 CRUD
+- 웹 스토리지 중 하나인 indexedDB 연결
+- chat GPT API 사용한 chat
+- 채팅방 인원 수에 따른 gpt 다수 처럼 응답
+
+  <br>
+
 ## 디렉토리 구조 📂
 
 <details markdown="1">
