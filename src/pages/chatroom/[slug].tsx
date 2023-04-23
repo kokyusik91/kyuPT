@@ -61,7 +61,7 @@ function Chatroom({ dbService }: ChatRoomProps) {
 
   useEffect(() => {
     async function startTimeout() {
-      if (messages && messages.length > 1) {
+      if (messages && messages.length > 1 && Number(query.headCount) > 2) {
         setTimeoutId((prevTimeoutId) => {
           if (prevTimeoutId) {
             clearTimeout(prevTimeoutId)
