@@ -25,7 +25,7 @@ export const transFormToDayFormat = (date: Date) => {
 
   return '0000-00-00'
 }
-
+// 시간으로 바꿔줌.
 export const transformToTime = (date: Date) => {
   if (date) {
     const hours = date.getHours().toString().padStart(2, '0')
