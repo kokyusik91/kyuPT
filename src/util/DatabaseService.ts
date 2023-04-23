@@ -1,5 +1,5 @@
 import IndexedDB from './indexedDB'
-import { ChatRoomMeta, ChatRoomResModel } from './type'
+import { ChatRoomMeta, ChatRoomResModel, ChatingResModel, Message } from './type'
 
 class DatabaseService {
   private static instance: DatabaseService | null = null
@@ -30,6 +30,18 @@ class DatabaseService {
 
   async updateChatroom(id: number, updateChatRoomData: ChatRoomMeta): Promise<ChatRoomResModel> {
     return await this.db.updateChatRoom(id, updateChatRoomData)
+  }
+
+  async createChating(id: number, message: Message) {
+    await this.db.createChating(id, message)
+  }
+
+  async updateChating(id: number, messageList: Message[]) {
+    await this.db.updateChating(id, messageList)
+  }
+
+  async getAllChating(id: number): Promise<ChatingResModel> {
+    return await this.db.getAllChating(id)
   }
 }
 
