@@ -1,5 +1,5 @@
 import { rejects } from 'assert'
-import { ChatRoomMeta, ChatRoomResModel } from './type'
+import { ChatRoomMeta, ChatRoomResModel, ChatingResModel, Message } from './type'
 
 class IndexedDB {
   // 전역에서 사용해야함.
@@ -32,7 +32,13 @@ class IndexedDB {
 
       request.onupgradeneeded = (event) => {
         const db = request.result
-        db.createObjectStore('chatroom', { keyPath: 'id', autoIncrement: true })
+        let oldVersion = event.oldVersion
+        if (oldVersion < 1) {
+          db.createObjectStore('chatroom', { keyPath: 'id', autoIncrement: true })
+        }
+        if (oldVersion < 2) {
+          db.createObjectStore('chating', { keyPath: 'id' })
+        }
       }
     })
   }
@@ -120,6 +126,38 @@ class IndexedDB {
         getItemRequest.onerror = (event) => {
           reject(getItemRequest.error)
         }
+      }
+    })
+  }
+
+  async createChating(id: number, message: Message) {
+    const db = await this.connect()
+    const transaction = db.transaction(['chating'], 'readwrite')
+    const store = transaction.objectStore('chating')
+    store.add({ id, message: [message] })
+  }
+
+  async updateChating(id: number, messageList: Message[]) {
+    const db = await this.connect()
+    const transaction = db.transaction(['chating'], 'readwrite')
+    const store = transaction.objectStore('chating')
+    store.put({ id, message: [...messageList] })
+  }
+
+  async getAllChating(id: number): Promise<ChatingResModel> {
+    const db = await this.connect()
+    const transaction = db.transaction(['chating'], 'readonly')
+    const store = transaction.objectStore('chating')
+    const request = store.get(id)
+
+    return new Promise((resolve, reject) => {
+      request.onerror = (event) => {
+        reject(request.error)
+      }
+
+      request.onsuccess = (event) => {
+        const messageList = request.result
+        resolve(messageList)
       }
     })
   }
