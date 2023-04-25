@@ -46,7 +46,7 @@ https://kokyusik91.github.io/tech/eleventh/
       <img src="public/images/modal.png">
     </td>
     <td>
-     <img src="public/images/chatroomlist.png">
+     <img src="public/images/chatroom.png">
     </td>
   </tr>
   
