@@ -30,7 +30,7 @@ export default function Home() {
       alert(error)
     }
   }
-
+  // PR 테스트
   const handleChangeInput = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value)
   }
